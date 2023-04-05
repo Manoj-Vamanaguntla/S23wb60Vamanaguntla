@@ -7,15 +7,14 @@ block content
     div(class="row")
       each item,index in results
         div(class="col-sm-2",onClick=`buy(${index})`)
-          p Color is #{item.Car_color}
-          p Model is #{item.Car_model}
-          p Title is #{item.Car_Title}
-          p Mileage is #{item.Car_mileage}
-          p Cost is #{item.Car_cost}
+          p Color is #{item.van_color}
+          p size is #{item.van_size}
+          p Cost is #{item.van_cost}
           //- Bonus Logic
   script.
-    function buy(thing) {
-      thing = thing+1;
-      alert(`You Purchased Item ${thing}`);
-    }
+    buy= (i) =>{
+      i+=1;
+      alert(`You Purchased Item ${i}`);
+    }  
+    
     
