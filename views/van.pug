@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+   - let results = [{van_color:"red",van_size:"small",van_cost:"$4000"},{van_color:"black",van_size:"medium",van_cost:"$7000"},{van_color:"white",van_size:"large",van_cost:"$6000"}]
+  div(class="container-fluid")
+    div(class="row")
+      each item,index in results
+        div(class="col-sm-2",onClick=`buy(${index})`)
+          p Color is #{item.Car_color}
+          p Model is #{item.Car_model}
+          p Title is #{item.Car_Title}
+          p Mileage is #{item.Car_mileage}
+          p Cost is #{item.Car_cost}
+          //- Bonus Logic
+  script.
+    function buy(thing) {
+      thing = thing+1;
+      alert(`You Purchased Item ${thing}`);
+    }
+    
